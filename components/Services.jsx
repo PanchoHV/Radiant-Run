@@ -1,7 +1,7 @@
 import React from 'react';
 import { SERVICES } from '../constants';
 
-const Services: React.FC = () => {
+const Services = () => {
   return (
     <section id="services" className="py-24 relative">
       <div className="max-w-6xl mx-auto px-6">
@@ -19,6 +19,7 @@ const Services: React.FC = () => {
               key={service.id} 
               className="group relative bg-secondary border border-white/5 p-8 rounded-2xl hover:border-gold/30 transition-all duration-300 hover:-translate-y-1"
             >
+              {/* Dynamic Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none" />
               
               <div className="w-12 h-12 rounded-xl bg-background border border-white/10 flex items-center justify-center mb-6 group-hover:border-gold/40 transition-colors">

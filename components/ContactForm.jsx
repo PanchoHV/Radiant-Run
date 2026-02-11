@@ -2,19 +2,18 @@ import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
-interface ContactFormProps {
-  idPrefix?: string; // To avoid ID collisions
-  compact?: boolean; // For slightly tighter spacing in modal
-}
+// 1. ELIMINADO: La interface ContactFormProps (solo existe en TS)
 
-const ContactForm: React.FC<ContactFormProps> = ({ idPrefix = 'form', compact = false }) => {
+// 2. CAMBIO: Se elimina ": React.FC<ContactFormProps>"
+const ContactForm = ({ idPrefix = 'form', compact = false }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // 3. CAMBIO: Se elimina ": React.FormEvent" del parámetro e
+  const handleSubmit = (e) => {
     e.preventDefault();
     const subject = encodeURIComponent(`Radiant Run — Quote request (${formData.name})`);
     const body = encodeURIComponent(

@@ -2,20 +2,28 @@ import React from 'react';
 import { ArrowRight, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-interface HeroProps {
-  onRequestQuote: () => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
+const Hero = ({ onRequestQuote }) => {
   return (
     <section id="top" className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+      {/* Video Background Effect */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="w-full h-full object-cover opacity-30 grayscale-[0.5]"
+        >
+          {/* Asegúrate de reemplazar esta URL con la ruta de tu video real */}
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-clouds-floating-in-the-blue-sky-background-1165-large.mp4" type="video/mp4" />
+        </video>
+        {/* Capa de degradado para asegurar la legibilidad del texto */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+      </div>
 
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12 relative z-10 w-full">
         
-        {/* Left Content */}
+        {/* Contenido Izquierdo */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -74,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
           </div>
         </motion.div>
 
-        {/* Right Content - "Card" */}
+        {/* Contenido Derecho - Tarjeta Informativa */}
         <motion.div 
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}

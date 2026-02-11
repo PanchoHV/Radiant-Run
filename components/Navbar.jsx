@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -32,9 +32,7 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Brand */}
         <a href="#" className="flex items-center group">
-          {/* Logo container increased size from h-12 to h-14 (2 points bigger) and width adjusted */}
           <div className="relative h-14 w-56 overflow-hidden transition-transform duration-300 group-hover:scale-105">
              <img 
                src="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Vigía%20Logos%20(5).webp" 
@@ -44,7 +42,6 @@ const Navbar: React.FC = () => {
           </div>
         </a>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <div className="flex items-center gap-6">
             {navLinks.map((link) => (
@@ -75,7 +72,6 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Toggle */}
         <button 
           className="md:hidden text-textMain"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -84,7 +80,6 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-secondary border-b border-white/5 p-6 animate-fade-in-down shadow-2xl">
           <div className="flex flex-col gap-4">

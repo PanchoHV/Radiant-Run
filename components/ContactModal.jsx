@@ -3,12 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import ContactForm from './ContactForm';
 
-interface ContactModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
+// 1. ELIMINADO: La interface ContactModalProps (JavaScript no la usa)
 
-const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+// 2. CAMBIO: Se elimina ": React.FC<ContactModalProps>"
+const ContactModal = ({ isOpen, onClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (

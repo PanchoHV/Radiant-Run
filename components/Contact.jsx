@@ -1,9 +1,9 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
-import { CONTACT_INFO } from '../constants';
+import { CONTACT_INFO } from '../constants'; // Asegúrate de que constants sea .js o .ts funcional
 import ContactForm from './ContactForm';
 
-const Contact: React.FC = () => {
+const Contact = () => { // Confirmamos que NO tiene ": React.FC"
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Decorative Blur */}

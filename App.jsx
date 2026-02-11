@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 
-const App: React.FC = () => {
+const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
